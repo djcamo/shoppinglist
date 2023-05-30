@@ -1,0 +1,68 @@
+:root{
+    --blue: #5e72e4;
+    --indigo: #5603ad;
+    --purple: #8965e0;
+    --pink: #f3a4b5;
+    --red: #f5365c;
+    --orange: #fb6340;
+    --yellow: #ffd600;
+    --green: #2dce89;
+    --teal: #11cdef;
+    --cyan: #2bffc6;
+    --white: #fff;
+    --gray: #8898aa;
+    --gray-dark: #32325d;
+    --light: #ced4da;
+    --lighter: #e9ecef;
+    --primary: #5e72e4;
+    --secondary: #f7fafc;
+    --success: #2dce89;
+    --info: #11cdef;
+    --warning: #fb6340;
+    --danger: #f5365c;
+    --light: #adb5bd;
+    --dark: #212529;
+    --default: #172b4d;
+    --white: #fff;
+    --neutral: #fff;
+    --darker: black;
+}
+
+body {
+    font-family: Poppins;
+}
+
+
+.title {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 -10px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+}
+.bar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.bar .icon {
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}

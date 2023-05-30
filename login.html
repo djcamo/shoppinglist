@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+	<style>
+		html {height: 100%;}
+		body {min-height: 100%; display: grid; grid-template-rows: 1fr auto; font-family: Poppins;}
+		h2{text-align:center;border-bottom:1px solid grey;margin-bottom:1em}
+		.add{padding:18px 32px;background-color: #2dce89;border:0;color:white;margin:5px 0;font-size:16pt;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+		.w100{width:100%}
+		.input{border-radius:0px;height:35px;margin-bottom: 1em;border:1px solid grey;padding:0;text-indent:5px}
+        .input:active{border:1px solid #2dce89;}
+		.footer {grid-row-start: 2;	grid-row-end: 3; border-top:1px solid grey; padding:5px 0}
+        .flexMiddle{display:flex;flex-wrap: wrap; align-content: center;justify-content: center;flex-direction: column;}
+	</style>
+</head>
+<body>
+    <div id="container" class="w100 flexMiddle">
+		<h2>My Shopping List</h2>
+		<form action="">
+            <label for="">Email Address</label>
+            <input type="text" class="w100 input" id="email" placeholder="email address">
+            <label for="">Password</label>
+            <input type="password" class="w100 input" id="password" placeholder="password">
+            <input type="button" value="Login" class=" add" id="login">
+		</form>
+		<hr>
+	</div>
+	<footer class="footer">
+		footer
+	</footer>
+    <script src="./login.js"></script>
+</body>
+</html>
+

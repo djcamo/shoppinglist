@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+
+	<script>navigator.serviceWorker.register("service-worker.js")</script>
+	<link rel="manifest" href="manifest.json" />
+	<link href="css/ratchet.min.css" rel="stylesheet"/>
+	<style>
+		.table-view-cell input{position: absolute;top:35%;right:15px}
+	</style>
+</head>
+
+<body>
+	<header class="bar bar-nav">
+		<a class="icon icon-trash pull-right" id="deleteList"></a>
+		<h3 class="title">Shopping List</h3>
+	</header>
+	<div id="container" class="content">
+		<form class="content-padded">
+			<input type="text" id="item">
+			<input type="button" value="Add" class="btn btn-positive  btn-block" id="add">
+		</form>
+		<div id="content" class="card"></div>
+	</div>
+
+	<!-- <nav class="bar bar-tab">
+		<a class="tab-item active" href="#">
+			<span class="icon icon-home"></span>
+			<span class="tab-label">Home</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-person"></span>
+			<span class="tab-label">Profile</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-star-filled"></span>
+			<span class="tab-label">Favorites</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-search"></span>
+			<span class="tab-label">Search</span>
+		</a>
+		<a class="tab-item" href="#">
+			<span class="icon icon-gear"></span>
+			<span class="tab-label">Settings</span>
+		</a>
+	</nav> -->
+	<script src="./script.js"></script>
+</body>
+
+</html>
