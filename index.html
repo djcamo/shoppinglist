@@ -27,15 +27,39 @@
 
 <body>
 	<header class="bar bar-nav">
-		<a class="icon icon-trash pull-right" id="deleteList"></a>
+		<a class="icon icon-trash pull-right" id="deleteList" style="display: none;"></a>
+		<a class="icon icon-close pull-left" id="logout" style="display: none;"></a>
 		<h3 class="title">Shopping List</h3>
 	</header>
 	<div id="container" class="content">
-		<form class="content-padded">
-			<input type="text" id="item">
-			<input type="button" value="Add" class="btn btn-positive  btn-block" id="add">
-		</form>
-		<div id="content" class="card"></div>
+
+		<div id="login" class="content-padded">
+			<form>
+				<input type="text" id="email">
+				<input type="password" id="password">
+				<input type="button" value="Login" class="btn btn-primary btn-block btn-outlined" id="loginBtn">
+			</form>
+			<p>or <a id="signupLink">Sign Up</a></p>
+		</div>
+
+		<div id="signup" style="display: none;" class="content-padded">
+			<form>
+				<input type="text" id="email">
+				<input type="password" id="password">
+				<input type="button" value="Sign Up" class="btn btn-block btn-outlined" id="signupBtn">
+			</form>
+			<p>or <a id="loginLink">Log In</a></p>
+		</div>
+
+		<div id="addItems" style="display: none;" class="content-padded">
+			<form>
+				<input type="text" id="item">
+				<input type="button" value="Add" class="btn btn-positive  btn-block" id="add">
+			</form>
+		</div>
+
+
+		<div id="content" class="card" style="display: none;"></div>
 	</div>
 
 	<!-- <nav class="bar bar-tab">

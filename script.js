@@ -5,6 +5,12 @@ const database = supabase.createClient(url, key);
 
 const add = document.querySelector("#add");
 const deleteList = document.querySelector("#deleteList");
+const signupLink = document.querySelector("#signupLink");
+const loginLink = document.querySelector("#loginLink");
+const login = document.querySelector("#login");
+const logout = document.querySelector("#logout");
+const signup = document.querySelector("#signup");
+const addItems = document.querySelector("#addItems");
 
 const renderItems = async () => {
     let content = document.getElementById("content");
@@ -26,8 +32,43 @@ const renderItems = async () => {
     }
 }
 
-renderItems();
 
+
+signupLink.addEventListener("click", async (e) => {
+    e.preventDefault();
+    login.style.display = 'none';
+    addItems.style.display = 'none';
+    content.style.display = 'none';
+    signup.style.display = 'block';
+})
+
+loginLink.addEventListener("click", async (e) => {
+    e.preventDefault();
+    login.style.display = 'block';
+    addItems.style.display = 'none';
+    content.style.display = 'none';
+    signup.style.display = 'none';
+})
+
+login.addEventListener("click", async (e) => {
+    e.preventDefault();
+    login.style.display = 'none';
+    addItems.style.display = 'block';
+    content.style.display = 'block';
+    deleteList.style.display = 'block';
+    logout.style.display = 'block';
+    renderItems();
+})
+
+logout.addEventListener("click", async (e) => {
+    e.preventDefault();
+    login.style.display = 'block';
+    addItems.style.display = 'none';
+    content.style.display = 'none';
+    deleteList.style.display = 'none';
+    logout.style.display = 'none';
+    renderItems();
+})
 
 add.addEventListener("click", async (e) => {
     e.preventDefault();
