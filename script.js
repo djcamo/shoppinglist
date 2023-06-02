@@ -5,18 +5,24 @@ const database = supabase.createClient(url, key);
 
 const add = document.querySelector("#add");
 const deleteList = document.querySelector("#deleteList");
-const signupLink = document.querySelector("#signupLink");
-const loginLink = document.querySelector("#loginLink");
-const login = document.querySelector("#login");
-const logout = document.querySelector("#logout");
-const signup = document.querySelector("#signup");
+const refreshList = document.querySelector("#refreshList");
+// const signupLink = document.querySelector("#signupLink");
+// const loginLink = document.querySelector("#loginLink");
+// const login = document.querySelector("#login");
+// const logout = document.querySelector("#logout");
+// const signup = document.querySelector("#signup");
 const addItems = document.querySelector("#addItems");
 
 const renderItems = async () => {
     let content = document.getElementById("content");
-    const res = await database.from("items").select("*");
+    const res = await database
+        .from("items")
+        .select("*")
+        .order('ticked', { ascending: true })
+        .order('name', { ascending: true });
     if (res) {
-        let html = `<ul class="table-view">`;
+        // let html = `<ul class="table-view">`;
+        let html = ``;
         let checked;
         res.data.forEach(element => {
             if(element['ticked'] == true){
@@ -24,62 +30,69 @@ const renderItems = async () => {
             }else{
                 checked = '';
             }
-            html += `<li class="table-view-cell">${element['name']} <input type='checkbox' class="" onclick="tickItem(${element['id']})" ${checked}></li>`
+            // html += `<li class="table-view-cell">${element['name']} <input type='checkbox' class="" onclick="tickItem(${element['id']})" ${checked}></li>`;
+            html += `<ion-item>
+                        <ion-checkbox justify="space-between" onclick="tickItem(${element['id']})" ${checked}>${element['name']}</ion-checkbox>
+                    </ion-item>`
         });
-        html += `</ul>`
+        // html += `</ul>`;
+
         content.innerHTML = html;
         item = "";
     }
 }
 
+renderItems();
 
+// signupLink.addEventListener("click", async (e) => {
+//     e.preventDefault();
+//     login.style.display = 'none';
+//     addItems.style.display = 'none';
+//     content.style.display = 'none';
+//     signup.style.display = 'block';
+// })
 
-signupLink.addEventListener("click", async (e) => {
-    e.preventDefault();
-    login.style.display = 'none';
-    addItems.style.display = 'none';
-    content.style.display = 'none';
-    signup.style.display = 'block';
-})
+// loginLink.addEventListener("click", async (e) => {
+//     e.preventDefault();
+//     login.style.display = 'block';
+//     addItems.style.display = 'none';
+//     content.style.display = 'none';
+//     signup.style.display = 'none';
+// })
 
-loginLink.addEventListener("click", async (e) => {
-    e.preventDefault();
-    login.style.display = 'block';
-    addItems.style.display = 'none';
-    content.style.display = 'none';
-    signup.style.display = 'none';
-})
+// login.addEventListener("click", async (e) => {
+//     e.preventDefault();
+//     login.style.display = 'none';
+//     addItems.style.display = 'block';
+//     content.style.display = 'block';
+//     deleteList.style.display = 'block';
+//     logout.style.display = 'block';
+//     renderItems();
+// })
 
-login.addEventListener("click", async (e) => {
-    e.preventDefault();
-    login.style.display = 'none';
-    addItems.style.display = 'block';
-    content.style.display = 'block';
-    deleteList.style.display = 'block';
-    logout.style.display = 'block';
-    renderItems();
-})
-
-logout.addEventListener("click", async (e) => {
-    e.preventDefault();
-    login.style.display = 'block';
-    addItems.style.display = 'none';
-    content.style.display = 'none';
-    deleteList.style.display = 'none';
-    logout.style.display = 'none';
-    renderItems();
-})
+// logout.addEventListener("click", async (e) => {
+//     e.preventDefault();
+//     login.style.display = 'block';
+//     addItems.style.display = 'none';
+//     content.style.display = 'none';
+//     deleteList.style.display = 'none';
+//     logout.style.display = 'none';
+//     renderItems();
+// })
 
 add.addEventListener("click", async (e) => {
     e.preventDefault();
     let item = document.querySelector("#item").value;
-    let res = await database.from("items").insert({
-        name: item,
-    })
-    if (res) {
-        document.querySelector("#item").value = "";
-        renderItems();
+    if(item != ''){
+        let res = await database.from("items").insert({
+            name: item,
+        })
+        if (res) {
+            document.querySelector("#item").value = "";
+            renderItems();
+        }
     }
+
 })
 
 deleteList.addEventListener("click", async (e) => {
@@ -92,6 +105,11 @@ deleteList.addEventListener("click", async (e) => {
     if (res) {
         renderItems();
     }
+})
+
+deleteList.addEventListener("click", async (e) => {
+    e.preventDefault();
+    renderItems();
 })
 
 const tickItem = async (id) => {
