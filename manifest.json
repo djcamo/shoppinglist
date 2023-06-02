@@ -23,8 +23,14 @@
         "purpose": "any"
     },
     {
-        "src": "images/icon-120x120.png",
-        "sizes": "120x120",
+        "src": "images/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any"
+    },
+    {
+        "src": "images/icon-128x128.png",
+        "sizes": "128x128",
         "type": "image/png",
         "purpose": "any"
     },
@@ -39,6 +45,12 @@
         "sizes": "72x72",
         "type": "image/png",
         "purpose": "any"
+    },
+    {
+        "src": "images/icon-48x48.png",
+        "sizes": "48x48",
+        "type": "image/png",
+        "purpose": "any"
     }
 ],
 "screenshots": [
@@ -49,5 +61,11 @@
         "description": "A screenshot of the home page"
     }
 ],
-"prefer_related_applications": false
+"prefer_related_applications": false,
+"shortcuts": [
+    {
+      "name": "home",
+      "url": "/index.html"
+    }
+  ]
 }
