@@ -6,11 +6,6 @@ const database = supabase.createClient(url, key);
 const add = document.querySelector("#add");
 const deleteList = document.querySelector("#deleteList");
 const refreshList = document.querySelector("#refreshList");
-// const signupLink = document.querySelector("#signupLink");
-// const loginLink = document.querySelector("#loginLink");
-// const login = document.querySelector("#login");
-// const logout = document.querySelector("#logout");
-// const signup = document.querySelector("#signup");
 const addItems = document.querySelector("#addItems");
 
 const renderItems = async () => {
@@ -30,7 +25,6 @@ const renderItems = async () => {
             }else{
                 checked = '';
             }
-            // html += `<li class="table-view-cell">${element['name']} <input type='checkbox' class="" onclick="tickItem(${element['id']})" ${checked}></li>`;
             html += `<ion-item>
                         <ion-checkbox justify="space-between" onclick="tickItem(${element['id']})" ${checked}>${element['name']}</ion-checkbox>
                     </ion-item>`
@@ -113,10 +107,22 @@ deleteList.addEventListener("click", async (e) => {
 })
 
 const tickItem = async (id) => {
+    //* check status
+    let checked;
+    let seletedItem = await database
+        .from("items")
+        .select("*")
+        .eq('id', id)
+    if(seletedItem.data[0].ticked == true) {
+        checked = false;
+    }else{
+        checked = true;
+    }
+    //* change status
     let res = await database
     .from("items")
     .update({
-        ticked: true,
+        ticked: checked,
     })
     .eq('id', id)
     if (res) {

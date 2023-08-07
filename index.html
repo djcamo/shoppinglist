@@ -12,16 +12,10 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<title>Document</title>
 	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1"></script>
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> -->
-
-
 	<script>navigator.serviceWorker.register("service-worker.js")</script>
 	<link rel="manifest" href="manifest.json" />
 	<link rel="apple-touch-icon" href="https://dcshoppinglist.netlify.app/images/icon-96x96.png">
 	<link rel="shortcut icon" type="image/png" href="https://dcshoppinglist.netlify.app/images/icon-96x96.png"/>
-	<!-- <link href="css/ratchet.min.css" rel="stylesheet" /> -->
 	<style>
 		.table-view-cell input {
 			position: absolute;
@@ -29,15 +23,11 @@
 			right: 15px
 		}
 	</style>
-
 	<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
 	<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-
 </head>
-
 <body>
-
 	<ion-header>
 		<ion-toolbar color="tertiary">
 			<ion-title>Shopping List</ion-title>
@@ -53,10 +43,7 @@
 			</ion-buttons>
 		</ion-toolbar>
 	</ion-header>
-
-
 	<ion-content class="ion-padding">
-
 		<ion-card>
 			<ion-card-content>
 				<ion-list>
@@ -70,68 +57,7 @@
 				</ion-button>
 			</ion-card-content>
 		</ion-card>
-
-		<!-- <ion-card>
-			<ion-card-content> -->
-				<ion-list id="content">
-				</ion-list>
-			<!-- </ion-card-content>
-		</ion-card> -->
-
-
-
 	</ion-content>
-
-	<!-- <ion-footer>
-		<ion-toolbar>
-			<ion-title>Footer</ion-title>
-		</ion-toolbar>
-	</ion-footer> -->
-
-
-
-	<!-- <header class="bar bar-nav">
-		<a class="icon icon-trash pull-right" id="deleteList" style="display: none;"></a>
-		<a class="icon icon-close pull-left" id="logout" style="display: none;"></a>
-		<h3 class="title">Shopping List</h3>
-	</header>
-	<div id="container" class="content">
-
-		<div id="login" class="card">
-			<form class="content-padded">
-				<input type="text" id="email">
-				<input type="password" id="password">
-				<input type="button" value="Login" class="btn btn-primary btn-block btn-outlined" id="loginBtn">
-			</form>
-			<p class="content-padded" style="text-align:center">or <a id="signupLink">Sign Up</a></p>
-		</div>
-
-		<div id="signup" style="display: none;" class="card">
-			<form class="content-padded">
-				<input type="text" id="email">
-				<input type="password" id="password">
-				<input type="button" value="Sign Up" class="btn btn-block btn-outlined" id="signupBtn">
-			</form>
-			<p class="content-padded" style="text-align:center">or <a id="loginLink">Log In</a></p>
-		</div>
-
-		<div id="addItems" style="display: none;" class="card">
-			<form class="content-padded">
-				<input type="text" id="item">
-				<input type="button" value="Add" class="btn btn-positive  btn-block" id="add">
-			</form>
-		</div>
-
-
-		<div id="content" class="card" style="display: none;"></div>
-	</div> -->
-
-
-
-
-
-
 	<script src="./script.js"></script>
 </body>
-
 </html>
