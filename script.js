@@ -25,9 +25,7 @@ const renderItems = async () => {
             }else{
                 checked = '';
             }
-            html += `<ion-item>
-                        <ion-checkbox justify="space-between" onclick="tickItem(${element['id']})" ${checked}>${element['name']}</ion-checkbox>
-                    </ion-item>`
+            html += `<ion-item><ion-checkbox justify="space-between" onclick="tickItem(${element['id']})" ${checked}>${element['name']}</ion-checkbox></ion-item>`;
         });
         // html += `</ul>`;
 
@@ -119,13 +117,13 @@ const tickItem = async (id) => {
         checked = true;
     }
     //* change status
-    let res = await database
+    let update = await database
     .from("items")
     .update({
         ticked: checked,
     })
     .eq('id', id)
-    if (res) {
+    if (update) {
         renderItems();
     }
 }
